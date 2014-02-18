@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+
 @property (nonatomic, assign) BOOL allSelected;
 
 @property (nonatomic, strong) NSMutableArray *cart;
@@ -17,6 +18,8 @@
 @property (nonatomic, weak) IBOutlet UITableView *cartView;
 
 @property (nonatomic, weak) IBOutlet UIButton *selectAll;
+//@property (nonatomic, retain) IBOutlet UIWebView *webview;
+@property (nonatomic, copy) NSString *someUrlToLoad;
 
 -(IBAction)selectAllOrNone:(id)sender;
 

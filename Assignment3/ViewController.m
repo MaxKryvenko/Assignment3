@@ -48,13 +48,18 @@
 //Should remove all of the fruit in the cart.
 -(IBAction)removeAllFruitInCart:(id)sender
 {
-    
+    _cart =[[NSMutableArray alloc] initWithCapacity:0];
 }
 
 //should add 50 bananas to the cart and display them!
 -(IBAction)fillCartWithBananas:(id)sender
 {
-    
+    for (int i=0; i<50; i++) {
+        Fruit *tempFruit = [[Fruit alloc] initWithWithName:@"Bananas2" andColor:@"Yellow" andShape:@"Curvy"];
+        tempFruit.url = @"http://en.m.wikipedia.org/wiki/Banana";
+        [_cart addObject:tempFruit];
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -107,7 +112,10 @@
     return cell;
 }
 
--(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+  // [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"www.google.com"]];
     
 }
 
